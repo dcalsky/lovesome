@@ -1,6 +1,14 @@
+aiofiles==0.3.0
 appdirs==1.4.0
+httptools==0.0.9
+Jinja2==2.9.5
+MarkupSafe==0.23
 olefile==0.44
 packaging==16.8
 Pillow==4.0.0
 pyparsing==2.1.10
+sanic==0.3.1
+sanic-jinja2==0.2.1
 six==1.10.0
+ujson==1.35
+uvloop==0.8.0
