@@ -175,4 +175,5 @@ typings/
 
 # dotenv environment variables file
 .env
-static/*
+static/*.jpg
+!static/ISH.jpg
