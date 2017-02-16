@@ -31,7 +31,7 @@
     <button id="submit">提交</button>
   </div>
   <div class="image">
-    <img id="lovesome" src="/static/ISH.jpg" alt="">
+    <img id="lovesome" src="./static/ISH.jpg" alt="">
   </div>
   <script src="http://apps.bdimg.com/libs/superagent/0.15.7/superagent.min.js"></script>
   <script>
@@ -50,13 +50,13 @@
           return
         }
         request
-          .get('/draw')
+          .get('./draw')
           .query({ word2: word2 })
           .query({ word3: word3 })
           .end(function (err, res) {
             if (res.body.message === 'ok') {
               console.log('success')
-              image.src = '/static/' + 'I' + word2 + word3 + '.jpg'
+              image.src = './static/' + 'I' + word2 + word3 + '.jpg'
             }
           });
       })
