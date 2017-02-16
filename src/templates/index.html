@@ -39,13 +39,15 @@
       var request = superagent
       var submit = document.getElementById('submit')
       var image = document.getElementById('lovesome')
+      var re = /^[A-Z0-9]{1}$/
       console.log(image.src)
       submit.addEventListener('click', function () {
         var
           word2 = document.getElementsByName('word2')[0].value,
           word3 = document.getElementsByName('word3')[0].value
-        if (word2.length !== 1 || word3.length !== 1) {
+        if (!word2.match(re) || !word3.match(re)) {
           alert('只能输入一个大写英文字母!')
+          return
         }
         request
           .get('/draw')
