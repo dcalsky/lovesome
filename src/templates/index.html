@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SomeHearts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .image {
+      width: 100%;
+    }
+    
+    .image img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>
+      <label for="word2">第二个字母: </label>
+      <input type="text" name="word2" placeholder="S">
+    </p>
+
+    <p>
+      <label for="word3">第三个字母: </label>
+      <input type="text" name="word3" placeholder="H">
+    </p>
+
+    <button id="submit">提交</button>
+  </div>
+  <div class="image">
+    <img id="lovesome" src="/static/ISH.jpg" alt="">
+  </div>
+  <script src="http://apps.bdimg.com/libs/superagent/0.15.7/superagent.min.js"></script>
+  <script>
+    window.onload = function () {
+      var request = superagent
+      var submit = document.getElementById('submit')
+      var image = document.getElementById('lovesome')
+      console.log(image.src)
+      submit.addEventListener('click', function () {
+        var
+          word2 = document.getElementsByName('word2')[0].value,
+          word3 = document.getElementsByName('word3')[0].value
+        if (word2.length !== 1 || word3.length !== 1) {
+          alert('只能输入一个大写英文字母!')
+        }
+        request
+          .get('/draw')
+          .query({ word2: word2 })
+          .query({ word3: word3 })
+          .end(function (err, res) {
+            if (res.body.message === 'ok') {
+              console.log('success')
+              image.src = '/static/' + 'I' + word2 + word3 + '.jpg'
+            }
+          });
+      })
+
+
+    }
+  </script>
+</body>
+
+</html>

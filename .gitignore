@@ -175,4 +175,4 @@ typings/
 
 # dotenv environment variables file
 .env
-static/
+static/*

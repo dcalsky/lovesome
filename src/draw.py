@@ -35,7 +35,7 @@ def draw(word1, word2, word3):
     # Draw text
     draw.text((heart.size[0] / 4 + 100, 50), word1, font=font, fill=font_color)
     draw.text((heart.size[0] / 4, heart.size[1] + 50), word2, font=font, fill=font_color)
-    draw.text((heart.size[0] + 20, heart.size[1] + 50), word3, font=font, fill=font_color)
+    draw.text((heart.size[0] + 30, heart.size[1] + 50), word3, font=font, fill=font_color)
 
     # Combine layers
     out = trim(Image.alpha_composite(canvas, txt))
