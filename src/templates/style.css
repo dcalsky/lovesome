@@ -1,7 +1,71 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  padding: 15px;
+}
+
 .image {
-  width: 100%;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,.08);
+  max-width: 500px;
+  margin: 20px auto;
 }
 
 .image img {
   width: 100%;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  border: 0;
+  outline: none;
+  padding: 10px 15px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.12), 0 0 4px 0 rgba(0,0,0,.08);
+  border-radius: 3px;
+  margin: 5px;
+  min-width: 200px;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid #42b983;
+  color: #42b983;
+  min-width: 200px;
+  padding: 7.5px 15px;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.submitting {
+  border-color: #9E9E9E;
+  color: #9E9E9E;
+  cursor: none;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, .6);
+}
+
+.copyright a {
+  text-decoration: none;
+}
+
+.copyright .heart {
+  color: red;
+  font-size: 1.1rem;
+  padding: 0 2px;
 }

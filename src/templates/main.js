@@ -2,8 +2,8 @@ window.onload = function () {
   var request = superagent
   var submit = document.getElementById('submit')
   var image = document.getElementById('lovesome')
+  console.log(submit)
   var re = /^[A-Z0-9]{1}$/
-  console.log(image.src)
   submit.addEventListener('click', function () {
     var
       word2 = document.getElementsByName('word2')[0].value,
@@ -12,6 +12,8 @@ window.onload = function () {
       alert('只能输入一个大写英文字母!')
       return
     }
+    submit.textContent = 'Making...'
+    submit.classList.add('submitting')
     request
       .get('./draw')
       .query({ word2: word2 })
@@ -20,6 +22,8 @@ window.onload = function () {
         if (res.body.message === 'ok') {
           console.log('success')
           image.src = './static/' + 'I' + word2 + word3 + '.jpg'
+          submit.textContent = 'Make'
+          submit.classList.remove('submitting')
         }
       });
   })

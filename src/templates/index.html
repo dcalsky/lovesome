@@ -9,21 +9,21 @@
 </head>
 
 <body>
-  <div>
-    <p>
-      <label for="word2">第二个字母: </label>
-      <input type="text" name="word2" placeholder="S">
-    </p>
+  <div class="wrapper">
+    <div class="header">
+      <p>
+        <input type="text" name="word2" required placeholder="第二个字母: S">
+        <input type="text" name="word3" required placeholder="第三个字母: H">
+      </p>
 
-    <p>
-      <label for="word3">第三个字母: </label>
-      <input type="text" name="word3" placeholder="H">
-    </p>
-
-    <button id="submit">提交</button>
+      <button id="submit">Make</button>
+    </div>
+    <div class="image">
+      <img id="lovesome" src="./static/ISH.jpg" alt="">
+    </div>
   </div>
-  <div class="image">
-    <img id="lovesome" src="./static/ISH.jpg" alt="">
+  <div class="copyright">
+    <p>Make with <span class="heart">❤</span> by <a href="https://www.noddl.me/">Dcalsky</a></p>
   </div>
   <script src="http://apps.bdimg.com/libs/superagent/0.15.7/superagent.min.js"></script>
   <script src="./main.js"></script>
