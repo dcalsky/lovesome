@@ -2,8 +2,8 @@ window.onload = function () {
   var request = superagent
   var submit = document.getElementById('submit')
   var image = document.getElementById('lovesome')
-  console.log(submit)
   var re = /^[A-Z0-9]{1}$/
+
   submit.addEventListener('click', function () {
     var
       word2 = document.getElementsByName('word2')[0].value,
@@ -25,7 +25,7 @@ window.onload = function () {
           submit.textContent = 'Make'
           submit.classList.remove('submitting')
         }
-      });
+      })
   })
 
 
