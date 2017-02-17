@@ -2,18 +2,10 @@
 <html lang="en">
 
 <head>
-  <title>SomeHearts</title>
+  <title>Lovesome</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    .image {
-      width: 100%;
-    }
-    
-    .image img {
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
@@ -34,36 +26,7 @@
     <img id="lovesome" src="./static/ISH.jpg" alt="">
   </div>
   <script src="http://apps.bdimg.com/libs/superagent/0.15.7/superagent.min.js"></script>
-  <script>
-    window.onload = function () {
-      var request = superagent
-      var submit = document.getElementById('submit')
-      var image = document.getElementById('lovesome')
-      var re = /^[A-Z0-9]{1}$/
-      console.log(image.src)
-      submit.addEventListener('click', function () {
-        var
-          word2 = document.getElementsByName('word2')[0].value,
-          word3 = document.getElementsByName('word3')[0].value
-        if (!word2.match(re) || !word3.match(re)) {
-          alert('只能输入一个大写英文字母!')
-          return
-        }
-        request
-          .get('./draw')
-          .query({ word2: word2 })
-          .query({ word3: word3 })
-          .end(function (err, res) {
-            if (res.body.message === 'ok') {
-              console.log('success')
-              image.src = './static/' + 'I' + word2 + word3 + '.jpg'
-            }
-          });
-      })
-
-
-    }
-  </script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
